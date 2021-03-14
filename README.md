@@ -41,6 +41,7 @@ This Kodi add-on is only a stub and cannot be executed as-is. It is meant as a s
 ### Steps
 
 The following steps should be taken when developping a custom media importer add-on based on this stub:
+1. read the [documentation](https://github.com/Montellese/xbmc/wiki/kodi.mediaimporter-extension-point)
 1. modify `addon.xml`
 2. implement a way to add new media providers to Kodi either using `lib/discovery.py` or by implementing the `discoverprovider` and `lookupprovider` actions in `lib/importer.py`. If there will only ever be one media provider supported by the add-on just use `xbmcmediaimport.addAndActivateProvider()` in `discovery.py` to create the media provider.
 3. implement the mandatory actions in `lib/importer.py`
