@@ -1,5 +1,7 @@
 # Stub Media Importer Add-on
 
+![Python code checks workflow](https://github.com/Montellese/mediaimporter.stub/actions/workflows/python-code-guides.yml/badge.svg)
+
 This Kodi add-on is only a stub and cannot be executed as-is. It is meant as a starting point for developers interested in implementing a media importer add-on or integrating media importing into their existing add-on(s).
 
 - [Stub Media Importer Add-on](#stub-media-importer-add-on)
