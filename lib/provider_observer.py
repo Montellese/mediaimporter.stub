@@ -81,17 +81,14 @@ class ProviderObserver:
         # TODO(stub): perform additional processing
         # TODO(stub): call self._change_items(items) to pass changed items to Kodi
 
-    def _find_import_indices(
-        self, media_import: xbmcmediaimport.MediaImport
-    ) -> List[int]:
+    def _find_import_indices(self, media_import: xbmcmediaimport.MediaImport) -> List[int]:
         if not media_import:
             raise ValueError("invalid media_import")
 
         return [
             i
             for i, localImport in enumerate(self._imports)
-            if localImport.getProvider().getIdentifier()
-            == media_import.getProvider().getIdentifier()
+            if localImport.getProvider().getIdentifier() == media_import.getProvider().getIdentifier()
             and localImport.getMediaTypes() == media_import.getMediaTypes()
         ]
 
@@ -102,9 +99,7 @@ class ProviderObserver:
             elif action == ProviderObserver.Action.STOP:
                 self._stop_action()
             else:
-                ProviderObserver.log(
-                    f"unknown action {action} to process", xbmc.LOGWARNING
-                )
+                ProviderObserver.log(f"unknown action {action} to process", xbmc.LOGWARNING)
 
         self._actions = []
 
@@ -150,9 +145,7 @@ class ProviderObserver:
                     xbmc.LOGWARNING,
                 )
 
-    def _find_import_for_item(
-        self, item: xbmcgui.ListItem
-    ) -> xbmcmediaimport.MediaImport:
+    def _find_import_for_item(self, item: xbmcgui.ListItem) -> xbmcmediaimport.MediaImport:
         video_info_tag = item.getVideoInfoTag()
         if not video_info_tag:
             return None
@@ -160,9 +153,7 @@ class ProviderObserver:
         item_media_type = video_info_tag.getMediaType()
 
         matching_imports = [
-            media_import
-            for media_import in self._imports
-            if item_media_type in media_import.getMediaTypes()
+            media_import for media_import in self._imports if item_media_type in media_import.getMediaTypes()
         ]
         if not matching_imports:
             return None
@@ -199,9 +190,7 @@ class ProviderObserver:
             return
 
         if not restart:
-            ProviderObserver.log(
-                f"stopped observing media imports from {provider2str(self._media_provider)}"
-            )
+            ProviderObserver.log(f"stopped observing media imports from {provider2str(self._media_provider)}")
 
         # TODO(stub): stop observing the media provider
 

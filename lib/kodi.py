@@ -105,9 +105,7 @@ class Api:
         return json_unique_ids[UNIQUE_ID]
 
     @staticmethod
-    def match_imported_item_ids_to_local_items(
-        local_items: List[ListItem], *imported_item_id_lists
-    ):
+    def match_imported_item_ids_to_local_items(local_items: List[ListItem], *imported_item_id_lists):
         matched_item_lists = []
         item_ids_to_process_lists = []
         for imported_item_ids in imported_item_id_lists:
@@ -116,10 +114,7 @@ class Api:
 
         for local_item in local_items:
             # abort if there are no more items to process
-            if all(
-                len(item_ids_to_process) == 0
-                for item_ids_to_process in item_ids_to_process_lists
-            ):
+            if all(len(item_ids_to_process) == 0 for item_ids_to_process in item_ids_to_process_lists):
                 break
 
             # retrieve the local item"s ID
@@ -139,9 +134,7 @@ class Api:
 
     @staticmethod
     # pylint: disable=too-many-arguments
-    def to_file_item(
-        item_obj: Dict, media_type: str = "", allow_direct_play: bool = True
-    ) -> ListItem:
+    def to_file_item(item_obj: Dict, media_type: str = "", allow_direct_play: bool = True) -> ListItem:
         # TODO(stub): check if the media type is supported
 
         # TODO(stub): parse the item's title / label
@@ -161,9 +154,7 @@ class Api:
         #             item.setDateTime(premiereDate)
 
         # fill video details
-        Api.fill_video_infos(
-            item_obj, media_type, item, allow_direct_play=allow_direct_play
-        )
+        Api.fill_video_infos(item_obj, media_type, item, allow_direct_play=allow_direct_play)
 
         # TODO(stub): handle artwork as a dict
         artwork = None
@@ -173,9 +164,7 @@ class Api:
         return item
 
     @staticmethod
-    def fill_video_infos(
-        item_obj: Dict, media_type: str, item: ListItem, allow_direct_play: bool = True
-    ):
+    def fill_video_infos(item_obj: Dict, media_type: str, item: ListItem, allow_direct_play: bool = True):
         info = {
             "mediatype": media_type,
             "path": "TODO(stub)",
@@ -185,17 +174,13 @@ class Api:
             "originaltitle": "TODO(stub)",
             "plot": Api._map_overview("TODO(stub)"),
             "plotoutline": "TODO(stub)",
-            "dateadded": Api.convert_datetime2db_datetime(
-                "2021-03-14 14:08:00"
-            ),  # TODO(stub)
+            "dateadded": Api.convert_datetime2db_datetime("2021-03-14 14:08:00"),  # TODO(stub)
             "year": 2021,  # TODO(stub)
             "rating": 0.0,  # TODO(stub)
             "mpaa": "TODO(stub)",
             "duration": 0,  # TODO(stub)
             "playcount": 0,  # TODO(stub)
-            "lastplayed": Api.convert_datetime2db_datetime(
-                "2021-03-14 14:08:00"
-            ),  # TODO(stub)
+            "lastplayed": Api.convert_datetime2db_datetime("2021-03-14 14:08:00"),  # TODO(stub)
             "director": ["TODO(stub)"],
             "writer": ["TODO(stub)"],
             "artist": ["TODO(stub)"],
@@ -314,11 +299,7 @@ class Api:
 
         # turn UNC paths into Kodi-specific Samba paths
         if path.startswith("\\\\"):
-            path = (
-                path.replace("\\\\", "smb://", 1)
-                .replace("\\\\", "\\")
-                .replace("\\", "/")
-            )
+            path = path.replace("\\\\", "smb://", 1).replace("\\\\", "\\").replace("\\", "/")
 
         # for DVDs and Blue-Ray try to directly access the main playback item
         if container == "dvd":

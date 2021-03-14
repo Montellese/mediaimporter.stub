@@ -101,14 +101,10 @@ class DiscoveryService:
         # add the media provider and activate it
         if xbmcmediaimport.addAndActivateProvider(media_provider):
             self._servers[server.id].registered = True
-            log(
-                f'stub server "{server.name}" ({server.id}) successfully added and activated'
-            )
+            log(f'stub server "{server.name}" ({server.id}) successfully added and activated')
         else:
             self._servers[server.id].registered = False
-            log(
-                f'failed to add and/or activate stub server "{server.name}" ({server.id})'
-            )
+            log(f'failed to add and/or activate stub server "{server.name}" ({server.id})')
 
     def _expire_servers(self):
         for server_id, server in iteritems(self._servers):
@@ -118,9 +114,7 @@ class DiscoveryService:
 
             server.registered = False
             xbmcmediaimport.deactivateProvider(server_id)
-            log(
-                f'stub server "{server.name}" ({server.id}) deactivated due to inactivity'
-            )
+            log(f'stub server "{server.name}" ({server.id}) deactivated due to inactivity')
 
     def _start(self):
         log("Looking for stub servers...")

@@ -199,9 +199,7 @@ def load_import_settings(handle, _):
     settings.registerActionCallback("stub.forcesync", "forcesync")
 
     # TODO(stub): register a setting options fillers
-    settings.registerOptionsFillerCallback(
-        "stub.importviews", "settingoptionsfillerviews"
-    )
+    settings.registerOptionsFillerCallback("stub.importviews", "settingoptionsfillerviews")
 
     settings.setLoaded()
 
@@ -211,23 +209,17 @@ def can_update_metadata_on_provider(handle, options):  # pylint: disable=unused-
     xbmcmediaimport.setCanUpdateMetadataOnProvider(True)
 
 
-def can_update_playcount_on_provider(
-    handle, options
-):  # pylint: disable=unused-argument
+def can_update_playcount_on_provider(handle, options):  # pylint: disable=unused-argument
     # TODO(stub): specify whether updating the playcount on the media provider is supported
     xbmcmediaimport.setCanUpdatePlaycountOnProvider(True)
 
 
-def can_update_last_played_on_provider(
-    handle, options
-):  # pylint: disable=unused-argument
+def can_update_last_played_on_provider(handle, options):  # pylint: disable=unused-argument
     # TODO(stub): specify whether updating last played on the media provider is supported
     xbmcmediaimport.setCanUpdateLastPlayedOnProvider(True)
 
 
-def can_update_resume_position_on_provider(
-    handle, options
-):  # pylint: disable=unused-argument
+def can_update_resume_position_on_provider(handle, options):  # pylint: disable=unused-argument
     # TODO(stub): specify whether updating the resume point on the media provider is supported
     xbmcmediaimport.setCanUpdateResumePositionOnProvider(True)
 
@@ -283,9 +275,7 @@ def exec_import(handle, options):
 
         if items:
             # pass the imported items back to Kodi
-            log(
-                f"{len(items)} {media_type} items imported from {provider2str(media_provider)}"
-            )
+            log(f"{len(items)} {media_type} items imported from {provider2str(media_provider)}")
 
             # TODO(stub): for partial imports use the following constants as an optional fourth argument:
             #     xbmcmediaimport.MediaImportChangesetTypeNone: let Kodi decide
@@ -332,9 +322,7 @@ def update_on_provider(handle, _):
         log("cannot retrieve updated item", xbmc.LOGERROR)
         return
 
-    log(
-        f'updating "{item.getLabel()}" ({item.getPath()}) on {provider2str(media_provider)}...'
-    )
+    log(f'updating "{item.getLabel()}" ({item.getPath()}) on {provider2str(media_provider)}...')
 
     video_info_tag = item.getVideoInfoTag()
     if not video_info_tag:

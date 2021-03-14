@@ -93,9 +93,7 @@ class ObserverService(xbmcmediaimport.Observer):
 
         media_provider = media_import.getProvider()
         if not media_provider:
-            raise ValueError(
-                f"cannot add media import {import2str(media_import)} with invalid media provider"
-            )
+            raise ValueError(f"cannot add media import {import2str(media_import)} with invalid media provider")
 
         media_provider_id = media_provider.getIdentifier()
         if media_provider_id not in self._observers:
@@ -109,9 +107,7 @@ class ObserverService(xbmcmediaimport.Observer):
 
         media_provider = media_import.getProvider()
         if not media_provider:
-            raise ValueError(
-                f"cannot remove media import {import2str(media_import)} with invalid media provider"
-            )
+            raise ValueError(f"cannot remove media import {import2str(media_import)} with invalid media provider")
 
         media_provider_id = media_provider.getIdentifier()
         if media_provider_id not in self._observers:

@@ -41,9 +41,7 @@ def string2unicode(text, encoding="utf-8") -> str:
 
 def normalize_string(text: str) -> str:
     try:
-        text = unicodedata.normalize("NFKD", string2unicode(text)).encode(
-            "ascii", "ignore"
-        )  # noqa: F821
+        text = unicodedata.normalize("NFKD", string2unicode(text)).encode("ascii", "ignore")  # noqa: F821
     except:  # noqa: E722  # nosec
         pass
 
