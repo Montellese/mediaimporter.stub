@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings version="1">
+  <section id="import" label="32100">
+    <category id="sync" label="39530">
+      <group id="1">
+        <!-- TODO(stub): add your own settings to the predefined ones -->
+        <setting id="stub.forcesync" type="action" label="32200">
+          <level>0</level>
+          <control type="button" format="action" />
+        </setting>
+      </group>
+    </category>
+    <category id="library" label="32201">
+      <group id="1">
+        <setting id="stub.importviews" type="list[string]" label="32202">
+          <level>0</level>
+          <default></default>
+          <constraints>
+            <delimiter>|</delimiter>
+          </constraints>
+          <control type="list" format="string">
+            <multiselect>true</multiselect>
+          </control>
+        </setting>
+        <setting id="stub.importcollections" type="boolean" label="32203">
+          <level>0</level>
+          <default>true</default>
+          <dependencies>
+            <!-- TODO(stub): make use of the HasMediaType condition -->
+            <dependency type="visible" on="property" name="HasMediaType">set</dependency>
+          </dependencies>
+          <control type="toggle" />
+        </setting>
+        <!-- TODO(stub): add your own settings -->
+      </group>
+    </category>
+    <!-- TODO(stub): add your own categories -->
+  </section>
+</settings>

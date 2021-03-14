@@ -1,0 +1,63 @@
+# Kodi Media Center language file
+# Addon Name: Stub Media Importer
+# Addon id: mediaimporter.stub
+# Addon Provider: Montellese
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32001"
+msgid "Retrieving {}..."
+msgstr ""
+
+#strings from 32002 to 32099 are reserved for media import logic
+
+msgctxt "#32100"
+msgid "TODO(stub)"
+msgstr ""
+
+msgctxt "#32101"
+msgid "Access"
+msgstr ""
+
+msgctxt "#32102"
+msgid "Username"
+msgstr ""
+
+msgctxt "#32103"
+msgid "Password"
+msgstr ""
+
+msgctxt "#32104"
+msgid "Test authentication"
+msgstr ""
+
+#strings from 32105 to 32199 are reserved for media provider settings
+
+msgctxt "#32200"
+msgid "Force full synchronisation"
+msgstr ""
+
+msgctxt "#32201"
+msgid "Library"
+msgstr ""
+
+msgctxt "#32202"
+msgid "Import media libraries"
+msgstr ""
+
+msgctxt "#32203"
+msgid "Import sets"
+msgstr ""
+
+#strings from 32204 to 32299 are reserved for media provider settings

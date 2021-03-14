@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings version="1">
+  <section id="stub" label="32100">
+    <category id="access" label="32101">
+      <group id="1">
+        <!-- TODO(stub): use hidden settings to store internal data -->
+        <setting id="stub.url" type="string">
+          <visible>false</visible>
+          <level>4</level>
+          <default></default>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+        </setting>
+        <setting id="stub.username" type="string" label="32102">
+          <level>0</level>
+          <default></default>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+          <control type="edit" format="string" />
+        </setting>
+        <setting id="stub.password" type="string" label="32103">
+          <level>0</level>
+          <default></default>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+          <dependencies>
+            <dependency type="enable" on="setting" setting="stub.username" operator="!is"></dependency>
+          </dependencies>
+          <control type="edit" format="string">
+            <hidden>true</hidden>
+          </control>
+        </setting>
+        <setting id="stub.testauthentication" type="action" label="32104">
+          <level>0</level>
+          <dependencies>
+            <dependency type="enable" on="setting" setting="stub.username" operator="!is"></dependency>
+          </dependencies>
+          <control type="button" format="action" />
+        </setting>
+        <!-- TODO(stub): add your own settings -->
+      </group>
+    </category>
+    <!-- TODO(stub): add your own categories -->
+  </section>
+</settings>
