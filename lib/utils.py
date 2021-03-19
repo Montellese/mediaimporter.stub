@@ -6,8 +6,9 @@
 #  See LICENSES/README.md for more information.
 #
 
-from six import PY3
 import unicodedata
+
+from six import PY3
 
 import xbmc  # pylint: disable=import-error
 import xbmcaddon  # pylint: disable=import-error

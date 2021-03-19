@@ -11,7 +11,6 @@ import sys
 from lib import importer
 from lib.utils import log
 
-
 if __name__ == "__main__":
     log("Stub media importer started")
     importer.run(sys.argv)

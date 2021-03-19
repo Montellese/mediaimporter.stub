@@ -9,7 +9,6 @@
 from lib.observer import ObserverService
 from lib.utils import log
 
-
 if __name__ == "__main__":
     # instantiate and start the observer service
     log("Stub media import observer started")

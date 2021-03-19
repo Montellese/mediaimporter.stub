@@ -7,6 +7,7 @@
 #
 
 import time
+
 from six import iteritems
 
 import xbmc  # pylint: disable=import-error

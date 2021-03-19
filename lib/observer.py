@@ -10,7 +10,7 @@ import xbmcmediaimport  # pylint: disable=import-error
 
 from lib.monitor import Monitor
 from lib.provider_observer import ProviderObserver
-from lib.utils import log, import2str
+from lib.utils import import2str, log
 
 
 class ObserverService(xbmcmediaimport.Observer):

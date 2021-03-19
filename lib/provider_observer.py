@@ -12,7 +12,7 @@ import xbmc  # pylint: disable=import-error
 import xbmcgui  # pylint: disable=import-error
 import xbmcmediaimport  # pylint: disable=import-error
 
-from lib.utils import log, import2str, provider2str
+from lib.utils import import2str, log, provider2str
 
 
 class ProviderObserver:

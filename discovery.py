@@ -9,7 +9,6 @@
 from lib.discovery import DiscoveryService
 from lib.utils import log
 
-
 if __name__ == "__main__":
     # instantiate and start the discovery service
     log("Stub media import discoverer started")
