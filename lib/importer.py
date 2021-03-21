@@ -109,6 +109,7 @@ def lookup_provider(handle, _):
 def can_import(handle, options):
     if "path" not in options:
         log('cannot execute "canimport" without path')
+        xbmcmediaimport.setCanImport(handle, False)
         return
 
     path = unquote(options["path"][0])  # noqa F841 # pylint: disable=unused-variable
@@ -123,11 +124,13 @@ def is_provider_ready(handle, _):
     media_provider = xbmcmediaimport.getProvider(handle)
     if not media_provider:
         log("cannot retrieve media provider", xbmc.LOGERROR)
+        xbmcmediaimport.setProviderReady(handle, False)
         return
 
     # prepare the media provider settings
     if not media_provider.prepareSettings():
         log("cannot prepare media provider settings", xbmc.LOGERROR)
+        xbmcmediaimport.setProviderReady(handle, False)
         return
 
     # TODO(stub): check if the configuration of the media provider is valid / complete
@@ -140,22 +143,27 @@ def is_import_ready(handle, _):
     media_import = xbmcmediaimport.getImport(handle)
     if not media_import:
         log("cannot retrieve media import", xbmc.LOGERROR)
+        xbmcmediaimport.setImportReady(handle, False)
         return
+
     # prepare and get the media import settings
     import_settings = media_import.prepareSettings()
     if not import_settings:
         log("cannot prepare media import settings", xbmc.LOGERROR)
+        xbmcmediaimport.setImportReady(handle, False)
         return
 
     # retrieve the media provider
     media_provider = xbmcmediaimport.getProvider(handle)
     if not media_provider:
         log("cannot retrieve media provider", xbmc.LOGERROR)
+        xbmcmediaimport.setImportReady(handle, False)
         return
 
     # prepare the media provider settings
     if not media_provider.prepareSettings():
         log("cannot prepare media provider settings", xbmc.LOGERROR)
+        xbmcmediaimport.setImportReady(handle, False)
         return
 
     # TODO(stub): check if the configuration of the media import is valid / complete
@@ -206,22 +214,22 @@ def load_import_settings(handle, _):
 
 def can_update_metadata_on_provider(handle, options):  # pylint: disable=unused-argument
     # TODO(stub): specify whether updating metadata on the media provider is supported
-    xbmcmediaimport.setCanUpdateMetadataOnProvider(True)
+    xbmcmediaimport.setCanUpdateMetadataOnProvider(handle, True)
 
 
 def can_update_playcount_on_provider(handle, options):  # pylint: disable=unused-argument
     # TODO(stub): specify whether updating the playcount on the media provider is supported
-    xbmcmediaimport.setCanUpdatePlaycountOnProvider(True)
+    xbmcmediaimport.setCanUpdatePlaycountOnProvider(handle, True)
 
 
 def can_update_last_played_on_provider(handle, options):  # pylint: disable=unused-argument
     # TODO(stub): specify whether updating last played on the media provider is supported
-    xbmcmediaimport.setCanUpdateLastPlayedOnProvider(True)
+    xbmcmediaimport.setCanUpdateLastPlayedOnProvider(handle, True)
 
 
 def can_update_resume_position_on_provider(handle, options):  # pylint: disable=unused-argument
     # TODO(stub): specify whether updating the resume point on the media provider is supported
-    xbmcmediaimport.setCanUpdateResumePositionOnProvider(True)
+    xbmcmediaimport.setCanUpdateResumePositionOnProvider(handle, True)
 
 
 # noqa pylint: disable=too-many-locals, too-many-statements, too-many-nested-blocks, too-many-branches, too-many-return-statements
